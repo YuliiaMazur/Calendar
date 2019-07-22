@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>calendar-javascript</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css'>
+
+      <link rel="stylesheet" href="./style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="calendar">
+  <div class="title">
+    <h1 class="green" id="calendar-title">Month</h1>
+    <h2 class="green" id="calendar-year">Year</h2>
+    <button class="btn btn-default" id="prev" data-toggle="calendar" data-action="prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="btn btn-default" id="next" data-toggle="calendar" data-action="next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="body">
+    <div class="lightgrey body-list">
+      <ul>
+        <li>MON</li>
+        <li>TUE</li>
+        <li>WED</li>
+        <li>THU</li>
+        <li>FRI</li>
+        <li>SAT</li>
+        <li>SUN</li>
+      </ul>
+      <div class="darkgrey body-list">
+        <ul id="days"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
