@@ -13,13 +13,11 @@ var my_year = my_date.getFullYear();
 var my_month = my_date.getMonth();
 var my_day = my_date.getDate();
 
-//計算某年某月第一天是星期幾
 function dayStart(month,year) {
 	var tmpDate = new Date(year, month, 1);
 	return (tmpDate.getDay());
 }
 
-//計算某年是不是閏年
 function dayMonth(month,year) {
 	var tmp = year % 4;
 	if (tmp==0){
@@ -31,25 +29,25 @@ function dayMonth(month,year) {
 
 function refreshDate() {
 	var str = "";
-	var totalDay = dayMonth(my_month,my_year);//計算該月總天數
-	var firstDay = dayStart(my_month,my_year);//計算該月第一天是星期幾
+	var totalDay = dayMonth(my_month,my_year);
+	var firstDay = dayStart(my_month,my_year);
 	var myclass;
 	for(var i=1;i<firstDay;i++){
-		str += "<li></li>";//為起始日之前的日期創建空白
+		str += "<li></li>";
 	}
 	for(var i=1;i<=totalDay;i++){
 		if((i<my_day && my_year==my_date.getFullYear() && my_month==my_date.getMonth()) || my_year<my_date.getFullYear() || ( my_year==my_date.getFullYear() && my_month<my_date.getMonth())){ 
-			myclass = " class='lightgrey'"; //在今天之前的日期，以浅灰色字顯示
+			myclass = " class='lightgrey'";
 		}else if (i==my_day && my_year==my_date.getFullYear() && my_month==my_date.getMonth()){
-			myclass = " class='green greenbox'"; //在今天的日期，以綠色字顯示
+			myclass = " class='green greenbox'";
 		}else{
-			myclass = " class='darkgrey'"; //在今天之後的日期，以深灰色字顯示
+			myclass = " class='darkgrey'";
 		}
-		str += "<li"+myclass+">"+i+"</li>"; //創建日期
+		str += "<li"+myclass+">"+i+"</li>";
 	}
-	holder.innerHTML = str;//設置日期顯示
-	ctitle.innerHTML = month_name[my_month];//設置月份顯示
-	cyear.innerHTML= my_year;//設定年份顯示
+	holder.innerHTML = str;
+	ctitle.innerHTML = month_name[my_month];
+	cyear.innerHTML= my_year;
 }
 refreshDate();
 
